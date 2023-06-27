@@ -5,9 +5,9 @@
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
   </head>
 <body>
- <h1>板ポリにテクスチャ―</h1>
- 板ポリにテクスチャ―貼ってみた<br>
- 非透過と透過
+ <h1>顔が迫ってくる</h1>
+ 怖い顔を避けようとカメラを動かしても迫ってくるようなものを作った<br>
+ 
  <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -115,8 +115,8 @@
         function update() {
           sprite1.position.z += 0.03;
           sprite2.position.z -= 0.03;
-          sprite3.position.y += 0.03;
-          sprite4.position.y += 0.03;
+          sprite3.position.x -= 0.03;
+          sprite4.position.x += 0.03;
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
