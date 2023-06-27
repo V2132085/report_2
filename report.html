@@ -59,21 +59,21 @@
         //const material = new THREE.SpriteMaterial({ map: texture,});
 
         //顔の画像
-        //var textureLoader = new THREE.TextureLoader();
-        //var texture = textureLoader.load("img/scaryface.png");
-        //const material = new THREE.SpriteMaterial({ map: texture,});
-
-        //顔テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();
         var texture = textureLoader.load("img/scaryface.png");
+        const material = new THREE.SpriteMaterial({ map: texture,});
 
-        var mat = new THREE.MeshLamberMaterial({transparent: true});
-        mat.map = texture;
+        //顔テクスチャー読み込み
+        //var textureLoader = new THREE.TextureLoader();
+        //var texture = textureLoader.load("img/scaryface.png");
 
-        var geometry = new THREE.PlaneGeonetry(1,2);
-        var face = new THREE.Mesh(geometry,mat);
-        face.position.set(0,0,0);
-        scene.add(face);
+        //var mat = new THREE.MeshLamberMaterial({transparent: true});
+        //mat.map = texture;
+
+        //var geometry = new THREE.PlaneGeonetry(1,2);
+        //var face = new THREE.Mesh(geometry,mat);
+        //face.position.set(0,0,0);
+        //scene.add(face);
         
         
         // 木左
@@ -89,15 +89,15 @@
         //scene.add(sprite2);
 
         //顔
-        //const sprite = new THREE.Sprite(material);
-        //sprite.scale.set(1,2,1);
-        //sprite.position.set(0,0,0);
-        //sprite.position.z +=0.01;
+        const sprite = new THREE.Sprite(material);
+        sprite.scale.set(1,2,1);
+        sprite.position.set(0,0,0);
         
         update();
 
         // 毎フレーム時に実行されるループイベントです
         function update() {
+          sprite.position.z +=0.01;
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
