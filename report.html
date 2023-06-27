@@ -92,13 +92,14 @@
         const sprite = new THREE.Sprite(material);
         sprite.scale.set(1,2,1);
         sprite.position.set(0,0,0);
-        sprite.position.z += 0.03;
+        //sprite.position.z += 0.03;
         scene.add(sprite);
         
         update();
 
         // 毎フレーム時に実行されるループイベントです
         function update() {
+          sprite.position.z += 0.03;
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
